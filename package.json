@@ -1,0 +1,21 @@
+{
+  "name": "ohregano-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "postbuild": "next-on-netlify"
+  },
+  "dependencies": {
+    "formik": "^2.2.1",
+    "framer-motion": "^2.6.15",
+    "locomotive-scroll": "^3.6.1",
+    "next": "^9.5.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-intersection-observer": "^8.28.5",
+    "react-slideshow-image": "^3.3.0",
+    "yup": "^0.29.3"
+  }
+}

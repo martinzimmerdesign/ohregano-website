@@ -1,0 +1,58 @@
+/* TEMP: Aktuell doppelter Code */
+.list {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  line-height: 2.4em;
+}
+
+/* TEMP: Aktuell doppelter Code */
+.list li {
+  color: var(--color-text);
+  font-size: var(--font-size-navigation);
+  padding: 8px 12px;
+  margin: 0px;
+  padding-left: 50px;
+  border-bottom: 2px solid white;
+}
+
+/* TEMP: Aktuell doppelter Code */
+.list li:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-main);
+}
+
+.active {
+  font-weight: bold;
+  background-color: var(--color-main);
+  border-radius: 50px 0px 50px 0px;
+  border-bottom: 2px solid white;
+}
+
+/* Tablet */
+@media (min-width: 62em) {
+
+  .list {
+    line-height: 3em;
+  }
+
+}
+
+/* Desktop */
+@media (min-width: 82em) {
+
+  .list {
+    line-height: 2.5em;
+  }
+
+}
+
+/* Desktop Big */
+@media (min-width: 102em) {
+
+  .list li {
+    padding: 20px 30px;
+    padding-left: 60px;
+  }
+
+}

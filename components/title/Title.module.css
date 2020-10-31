@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: var(--border-width) 0px;
+}
+
+.title {
+  font-family: var(--font-main);
+  color: var(--color-main);
+  font-weight: bold;
+  font-size: var(--font-size-title);
+  margin: 10px 0px;
+}
+
+.line {
+  height: 1px;
+  background-color: #232323;
+  width: 100%;
+}
