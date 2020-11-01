@@ -1,9 +1,11 @@
-import styles from './Formular.module.css'
+import stylesButton from 'components/button/Button.module.css';
+import styles from './Formular.module.css';
 import { InputElement, TextElement, CheckboxElement } from './FormularElements.js';
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { motion } from "framer-motion";
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import Button from 'components/button/Button.js';
 
 const validationSchema = Yup.object({
   name: Yup.string("Gib deinen Namen ein.").required("Denk an deinen Namen."),
@@ -47,6 +49,27 @@ const variants = {
 };
 
 export default function Formular() {
+
+  const variants = {
+    basic: {
+      enter: { y: 0, opacity: 1 },
+      hover: { scale: 1.05 },
+      tap: { scale: 0.95 },
+      exit: { y: 50, opacity: 0 }
+    },
+    arrow: {
+      enter: {
+        x: 0,
+      },
+      hover: { x: -10,
+        transition: { repeat: Infinity, repeatType: "mirror", duration: 0.5, ease: "easeOut" },
+      },
+      exit: {
+        x: 0,
+      }
+    }
+  };
+
   return (
     <div>
       <Formik
@@ -91,7 +114,13 @@ export default function Formular() {
                     <div onClick={handleClick}><CheckboxElement name="checkbox" className="checkbox" /></div>
                   </motion.div>
                 </div>
-                <motion.button variants={variants.basic} className={styles.button} type="submit" disabled={isSubmitting}>Senden</motion.button>
+                <div className={styles.button}>
+                <motion.button type="submit" disabled={isSubmitting} whileHover="hover" whileTap="tap" variants={variants.basic} style={{backgroundColor: "var(--color-main)", border: 0}} className={stylesButton.container + " disable_select"}>
+                  <a className={stylesButton.title}>Senden</a>
+                  {/* Static img directly imported from public/ */}
+                  <motion.img variants={variants.arrow} className={stylesButton.icon} style={{width: "42px"}} src="/icons/arrow.png" alt="Button Icon" />
+                </motion.button>
+                </div>
             </div>
           </Form>
         )}

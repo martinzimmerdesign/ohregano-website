@@ -105,11 +105,11 @@
     background-color: var(--color-main);
 }
 
+
 .button {
   display: flex;
-  margin-top: 40px;
-  padding: 20px;
-  font-size: var(--font-size-input);
+  justify-content: flex-start;
+  width: 100%;
 }
 
 /* Desktop */
@@ -132,13 +132,12 @@
     margin-left: 30px;
   }
 
-  .button {
-    align-self: flex-end;
-    margin: 0;
-  }
-
   .element {
     padding: 16px 10px;
+  }
+
+  .button {
+    justify-content: flex-end;
   }
 
 }
