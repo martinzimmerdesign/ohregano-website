@@ -22,8 +22,6 @@ export default function Button({ title, link, color }) {
         x: 0,
       }
     }
-
-    
   };
 
   return (

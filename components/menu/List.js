@@ -20,7 +20,7 @@ const router = useRouter();
       <motion.li variants={variants.link}>Musikalische Leitung</motion.li>
       <motion.li variants={variants.link}>Rückschau</motion.li>
       <motion.li variants={variants.link}>Mitgliederbereich</motion.li>
-      <motion.li variants={variants.link}>Termine</motion.li>
+      <motion.li variants={variants.link}>Test</motion.li>
       <Link href="/kontakt"><motion.li className={router.pathname == "/kontakt" ? styles.active : ""} variants={variants.link}>Kontakt</motion.li></Link>
     </ul>
   )
