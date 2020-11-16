@@ -8,12 +8,13 @@
   border-radius: 15px;
   margin: 20px 0px;
   -webkit-box-shadow: 0px 4px 2px 0px rgba(0,0,0,0.1);
+  font-size: var(--font-size-paragraph);
+  height: 70px;
 }
 
 .title {
   color: white;
   pointer-events: none;
-  font-size: var(--font-size-paragraph);
   font-weight: bold;
   text-transform: uppercase;
 }

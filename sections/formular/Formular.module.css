@@ -16,7 +16,7 @@
   display: block; /* Important */
 }
 
-.title {
+.form_title {
   margin: 2px 0px;
   font-size: var(--font-size-p-title);
 }
@@ -76,6 +76,7 @@
   position: absolute;
   height: 0;
   width: 0;
+  opacity: 0;
 }
 
 /* Checkbox Text */
@@ -110,6 +111,7 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  
 }
 
 /* Desktop */

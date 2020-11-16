@@ -96,7 +96,7 @@ export default function Formular() {
         {({ isSubmitting }) => (
             <Form name="contact" data-netlify={true} >
               <div className={styles.outer}>
-              <motion.h1 variants={variants.basic} className={styles.title}>Kontaktformular</motion.h1>
+              <motion.h1 variants={variants.basic} className={styles.form_title}>Kontaktformular</motion.h1>
               <motion.div variants={variants.basic} className={styles.line}></motion.div>
                 <div className={styles.container}>
                   <motion.div variants={variants.basic} className={styles.wrapper}>
@@ -116,7 +116,7 @@ export default function Formular() {
                 </div>
                 <div className={styles.button}>
                 <motion.button type="submit" disabled={isSubmitting} whileHover="hover" whileTap="tap" variants={variants.basic} style={{backgroundColor: "var(--color-main)", border: 0}} className={stylesButton.container + " disable_select"}>
-                  <a className={stylesButton.title}>Senden</a>
+                  <p className={stylesButton.title}>Senden</p>
                   {/* Static img directly imported from public/ */}
                   <motion.img variants={variants.arrow} className={stylesButton.icon} style={{width: "42px"}} src="/icons/arrow.png" alt="Button Icon" />
                 </motion.button>
