@@ -20,6 +20,7 @@
 
 .icon {
   height: 42px;
+  width: 42px;
   margin-left: 30px;
   background-color: rgba(0,0,0,0.1);
   border-radius: 100px;

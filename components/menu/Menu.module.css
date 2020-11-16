@@ -2,8 +2,8 @@
   position: fixed;
   top: var(--border-width);
   right: var(--border-width);
-  width: max-content;
-  padding: 12px 12px;
+  width: auto;
+  padding: 10px 10px;
   border-radius: 8px;
   background-color: var(--color-main);
   display: flex;
