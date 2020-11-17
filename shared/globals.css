@@ -185,15 +185,3 @@ select:-webkit-autofill:focus {
 *:focus {
   outline: none;
 }
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-
-}

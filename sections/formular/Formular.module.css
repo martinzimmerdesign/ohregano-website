@@ -36,22 +36,46 @@
 
 .element {
   border-radius: 10px;
-  border: 1.5px solid #323232;
+  border: 1px solid #f4f4f4;
   padding: 15px 10px;
   width: 100%;
   max-width: 420px;
   font-size: var(--font-size-input);
   position: relative;
+  font-weight: normal;
 }
 
-.input {
+.input, .textarea  {
   display: flex;
+  color: #323232;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.1);
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.element:focus {
+  background-color: #fafafa;
+  border: 1px solid #fafafa;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.element:hover {
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.element::placeholder, .element::-ms-input-placeholder, .element::-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #a5a5a5;
+  margin-left: 20px;
+}
+
+.input:focus::placeholder, .textarea:focus::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fafafa;
 }
 
 .textarea {
   height: 120px;
   font-family: var(--font-main);
   font-size: calc(var(--font-size-input) * 0.8);
+  resize: vertical;
 }
 
 .error_message {
