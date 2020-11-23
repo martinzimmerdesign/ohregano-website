@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Kontakt.module.css'
+import stylesFormular from '../sections/formular/Formular.module.css'
 import Title from '../components/title/Title.js'
 import Menu from '../components/menu/Menu.js'
 import Footer from '../components/footer/Footer.js'
@@ -29,8 +30,10 @@ export default function Kontakt() {
         <Title title="Kontakt" caps={false} />
         <Paragraph sectionTitle={false} title="Interesse oder Fragen?" text="Haben Sie Interesse am Mitsingen oder allgemeine Fragen zum Chor? Dann nehmen Sie bitte gerne Kontakt zu uns auf!" />
         <Formular />
+        <Paragraph sectionTitle={false} title="Hier proben wir." text="Sankt-Ursula-Weg 7, 21335 Lüneburg" />
+        <motion.div variants={variants.basic} className={stylesFormular.line}></motion.div>
         <a href="#maps"><motion.div variants={variants.basic} className={styles.maps_container}>
-          <motion.p variants={variants.basic} className={styles.link}>Zu Google Maps</motion.p>
+          <motion.p variants={variants.basic} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className={styles.link}>Google Maps</motion.p>
         </motion.div></a>
       </SectionContainer>
 

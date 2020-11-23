@@ -22,6 +22,7 @@
 .top {
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
 }
 
 .top_inner {
