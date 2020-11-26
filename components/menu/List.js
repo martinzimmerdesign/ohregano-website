@@ -17,7 +17,7 @@ const router = useRouter();
   return (
     <ul className={styles.list  + " disable_select"}>
       <Link href="/"><motion.li className={router.pathname == "/" ? styles.active : ""} variants={variants.link}>Startseite</motion.li></Link>
-      <motion.li variants={variants.link}>Musikalische Leitung</motion.li>
+      <Link href="/leitung"><motion.li className={router.pathname == "/leitung" ? styles.active : ""} variants={variants.link}>Musikalische Leitung</motion.li></Link>
       <motion.li variants={variants.link}>Rückschau</motion.li>
       <motion.li variants={variants.link}>Mitgliederbereich</motion.li>
       <Link href="/termine"><motion.li className={router.pathname == "/termine" ? styles.active : ""} variants={variants.link}>Termine</motion.li></Link>
