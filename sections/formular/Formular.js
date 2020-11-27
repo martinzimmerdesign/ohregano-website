@@ -83,11 +83,11 @@ export default function Formular() {
             body: encode({ "form-name": "contact", ...values })
           })
           .then(() => {
-            alert('Success');
+            alert('Ihre Nachricht wurde gesendet. Vielen Dank!');
             actions.resetForm()
           })
           .catch(() => {
-            alert('Error');
+            alert('Es ist etwas schief gelaufen. Schreibe uns bitte direkt per E-Mail.');
           })
           .finally(() => actions.setSubmitting(false))
         }

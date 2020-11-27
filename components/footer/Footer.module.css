@@ -62,7 +62,6 @@
 .links {
   font-size: var(--font-size-paragraph);
   line-height: 1.6em;
-  width: 100%;
   max-width: 550px;
   margin-top: 0px;
   text-decoration: underline;

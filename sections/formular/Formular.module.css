@@ -138,8 +138,9 @@
   
 }
 
-/* Desktop */
-@media (min-width: 82em) {
+/* Tablet */
+/* 420 * 2 + 30 * 2 + 70 * 2 */
+@media (min-width: 1040px) {
 
   .container {
     flex-direction: row;
