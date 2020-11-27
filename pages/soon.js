@@ -5,6 +5,13 @@ import ContentContainer from '../components/container/ContentContainer.js'
 import SectionContainer from '../components/container/SectionContainer.js'
 import Paragraph from '../components/paragraph/Paragraph.js'
 
+Document.getInitialProps = async ({req, res}) => {
+    await basicAuthMiddleware(req, res)
+    
+
+    
+}
+
 export default function Soon() {
 
   return (
