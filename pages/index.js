@@ -13,7 +13,7 @@ import styles from '../styles/Startseite.module.css'
 import Footer from '../components/footer/Footer.js'
 import { useState, useEffect, useRef } from 'react'
 
-export default function Startseite() {
+export default function Startseite({ data }) {
 
   // get width and height
   const size = useWindowSize();

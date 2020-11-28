@@ -18,9 +18,6 @@
   pointer-events: none;
   font-weight: bold;
   text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  text-align: center;
 }
 
 .icon {

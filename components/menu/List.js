@@ -18,8 +18,8 @@ const router = useRouter();
     <ul className={styles.list  + " disable_select"}>
       <Link href="/"><motion.li className={router.pathname == "/" ? styles.active : ""} variants={variants.link}>Startseite</motion.li></Link>
       <Link href="/leitung"><motion.li className={router.pathname == "/leitung" ? styles.active : ""} variants={variants.link}>Musikalische Leitung</motion.li></Link>
-      <motion.li variants={variants.link}>Rückschau</motion.li>
-      <Link href="/soon"><motion.li className={router.pathname == "/soon" ? styles.active : ""} variants={variants.link}>Mitgliederbereich</motion.li></Link>
+      <Link href="/soon"><motion.li className={router.pathname == "/soon" ? styles.active : ""} variants={variants.link}>Rückschau</motion.li></Link>
+      <Link href="/mitgliederbereich"><motion.li className={router.pathname == "/mitgliederbereich" ? styles.active : ""} variants={variants.link}>Mitgliederbereich</motion.li></Link>
       <Link href="/termine"><motion.li className={router.pathname == "/termine" ? styles.active : ""} variants={variants.link}>Termine</motion.li></Link>
       <Link href="/kontakt"><motion.li className={router.pathname == "/kontakt" ? styles.active : ""} variants={variants.link}>Kontakt</motion.li></Link>
     </ul>
