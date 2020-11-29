@@ -1,10 +1,10 @@
 // next.config.js
-
+/*
 module.exports = {
   // Target must be serverless
-  // target: "serverless"
+  target: "serverless"
 };
-
+*/
 
 /* const webpack = require('webpack');
 require('dotenv').config(); */
@@ -13,6 +13,10 @@ require('dotenv').config(); */
  const Dotenv = require('dotenv-webpack');
 
 module.exports = {
+
+  // Target must be serverless
+  target: "serverless",
+
   webpack: config => {
     
     config.plugins.push(new Dotenv());
