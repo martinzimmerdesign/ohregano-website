@@ -10,7 +10,7 @@ module.exports = {
 require('dotenv').config(); */
 
 // webpack.config.js
-/* const Dotenv = require('dotenv-webpack');
+ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   webpack: config => {
@@ -19,8 +19,9 @@ module.exports = {
 
     return config;
   }
-}; */
+}; 
 
+/*
 module.exports = {
   webpack: config => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
@@ -32,5 +33,5 @@ module.exports = {
 
     return config;
   }
-};
+}; */
  
