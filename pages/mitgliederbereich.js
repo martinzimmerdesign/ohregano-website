@@ -15,8 +15,6 @@ export default function Mitgliederbereich() {
     const [renderTable, setRenderTable] = useState([]);
 
     let tableData = []
-    let renderData = ""
-    let test = "tesfefst"
 
     const fetchData = async () => {
         const db = loadFirebase();

@@ -8,7 +8,6 @@
     "postbuild": "next-on-netlify"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
     "firebase": "^8.1.1",
     "formik": "^2.2.1",
     "framer-motion": "^2.6.15",
