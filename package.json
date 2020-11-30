@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "postbuild": "next-on-netlify"
+    "postbuild": "next start"
   },
   "dependencies": {
     "firebase": "^8.1.1",
