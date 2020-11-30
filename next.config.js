@@ -10,7 +10,7 @@ module.exports = {
 require('dotenv').config(); */
 
 // webpack.config.js
-/* const Dotenv = require('dotenv-webpack');
+ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 
@@ -18,7 +18,7 @@ module.exports = {
     config.plugins.push(new Dotenv());
     return config;
   }
-}; */
+}; 
 
 /*
 module.exports = {
