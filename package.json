@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
-    "postbuild": "next start"
+    "start": "next start"
   },
   "dependencies": {
     "firebase": "^8.1.1",
