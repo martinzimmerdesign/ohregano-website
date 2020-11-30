@@ -1,3 +1,16 @@
+module.exports = {
+  env: {
+    API_KEY: process.env.API_KEY,
+    AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+    DATABASE_URL: process.env.DATABASE_URL,
+    PROJECT_ID: process.env.PROJECT_ID,
+    STORAGE_BUCKET: process.env.STORAGE_BUCKET,
+    MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
+    APP_ID: process.env.APP_ID,
+    MEASUREMENT_ID: process.env.MEASUREMENT_ID,
+  },
+};
+
 // next.config.js
 /*
 module.exports = {
@@ -10,6 +23,7 @@ module.exports = {
 require('dotenv').config(); */
 
 // webpack.config.js
+/*
  const Dotenv = require('dotenv-webpack');
 
 module.exports = {
@@ -18,7 +32,7 @@ module.exports = {
     config.plugins.push(new Dotenv());
     return config;
   }
-}; 
+}; */
 
 /*
 module.exports = {

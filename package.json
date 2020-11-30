@@ -8,17 +8,15 @@
     "postbuild": "next-on-netlify"
   },
   "dependencies": {
-    "dotenv-webpack": "^6.0.0",
     "firebase": "^8.1.1",
-    "formik": "^2.2.1",
-    "framer-motion": "^2.6.15",
+    "formik": "^2.2.5",
+    "framer-motion": "^2.9.4",
     "locomotive-scroll": "^3.6.1",
     "next": "^9.5.5",
-    "next-on-netlify": "^2.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-intersection-observer": "^8.28.5",
-    "react-slideshow-image": "^3.3.0",
+    "react-intersection-observer": "^8.31.0",
+    "react-slideshow-image": "^3.4.1",
     "yup": "^0.29.3"
   }
 }
