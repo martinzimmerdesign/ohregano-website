@@ -3,5 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/mitgliederbereich": "pages/mitgliederbereich.js",
-  "/kontakt": "pages/kontakt.js"
+  "/kontakt": "pages/kontakt.js",
+  "/soon": "pages/soon.js"
 }

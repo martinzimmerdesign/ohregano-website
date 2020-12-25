@@ -1,14 +1,45 @@
+    .login_wrapper {
+        display: flex;
+        margin: 0 auto;
+        justify-content: left;
+        align-items: left;
+        flex-direction: column;
+    }
+    
+    .input {
+        border-radius: 10px;
+        border: 1px solid #f4f4f4;
+        padding: 15px 10px;
+        width: 100%;
+        max-width: 420px;
+        font-size: var(--font-size-input);
+        position: relative;
+        font-weight: normal;
+        display: flex;
+        color: #323232;
+        box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.1);
+        transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);  
+    }
+
+    .submit {
+        display: flex;
+    }
+    
     .table {
         display: flex;
         max-width: var(--content-max-width);
         flex-direction: column;
-        margin: 40px 0px;
+        margin: 20px 0px;
+        border: 1px solid rgb(150, 150, 150);
+        padding: 20px;
+        border-radius: 10px;
     }
 
     .row_wrapper {
-        margin: 4px 0px;
+        margin: 6px 0px;
         border-radius: 5px;
         background-color: rgb(220, 220, 220);
+        padding: 10px 0px;
     }
 
     .row_wrapper:nth-child(odd) {
@@ -19,9 +50,10 @@
         display: none;
         flex-direction: column;
         background-color: rgb(172, 172, 172);
-        margin: 4px 0px;
+        margin: 6px 0px;
         border-radius: 5px;
         flex-wrap: wrap;
+        padding: 10px 0px;
     }
 
     .row_parent {
@@ -34,10 +66,11 @@
 
     .row_element {
         align-self: start;
-        margin: 10px 0px;
+        margin: 0px 0px;
         margin-left: 20px;
         overflow: hidden;
         display: none;
+        padding: 10px 0px;
     }
 
     .row_element:nth-child(1) {
@@ -61,23 +94,21 @@
     .button {
         display: inline-flex;
         justify-content: flex-end;
-        align-items: center;
         width: 100px;
-    }
-
-    .button p:hover {
-        background-color: rgba(0,0,0,0.4);
     }
 
     .button p {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 0;
         margin-right: 20px;
         padding: 4px 10px;
         background-color: rgba(0,0,0,0.2);
         border-radius: 4px;
         justify-self: flex-end;
+    }
+
+    .member_counter {
+        text-align: center;
     }
 
     /* Mobile */

@@ -33,6 +33,11 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/mitgliederbereich.js"
+    ],
+    "/soon": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/soon.js"
     ]
   },
   "ampFirstPages": []
