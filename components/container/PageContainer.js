@@ -29,7 +29,7 @@ function PageContainer (props) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         {props.children}
-        <div style={{display: props.withFooter ? "block" : "none" }} ><Footer /></div>
+        <div style={{display: props.withFooter ? "block" : "none" }} ><Footer noMargin={props.noMargin}/></div>
       </div>
     </React.Fragment>
   );

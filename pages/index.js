@@ -75,9 +75,13 @@ export default function Startseite({ data }) {
       </ContentContainer>
 
       <div className={styles.container}>
-        <img className={styles.left} src="/covers/2006gross.jpg" alt="Chor Cover 1" />
-        <img className={styles.middle} src="/covers/2012tanz_gross.jpg" alt="Chor Cover 2" />
-        <img className={styles.right} src="/covers/2008gross.png" alt="Chor Cover 3" />
+      <ContentContainer>
+      <SectionContainer>
+        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.basic} className={styles.left} src="/covers/2006gross.jpg" alt="Chor Cover 1" />
+        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.basic} className={styles.middle} src="/covers/2012tanz_gross.jpg" alt="Chor Cover 2" />
+        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.basic} className={styles.right} src="/covers/2008gross.png" alt="Chor Cover 3" />
+        </SectionContainer>
+        </ContentContainer>
 
         <svg className={styles.svg_mobile} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 620">
           <path fill="#ffffff" fillOpacity="1" d="M0,288L120,256C240,224,480,160,720,133.3C960,107,1200,117,1320,122.7L1440,128L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
@@ -90,11 +94,11 @@ export default function Startseite({ data }) {
           <ContentContainer>
             <SectionContainer>
               <Paragraph sectionTitle={true} title="Diversität." text="Große Gesamtwerke, wie z. B. Carmina Burana von Carl Orff, Canto General von Mikis Theodorakis und Misa Criolla von Ariel Ramirez, wechseln sich ab mit Liederprogrammen: „Liebe zwischen den Zeilen“, „Lieder von Grau bis Schwarz“, „Meine erste Single“ oder „Liederliche Arbeit“." />
-              <Button title="rückschau" link="kontakt" color="#F7882F" />
+              <Button title="rückschau" link="rueckschau" color="#F7882F" />
             </SectionContainer>
           </ContentContainer>
         </div>
-        <Footer footerBg="var(--color-bg-shape)"/>
+        <Footer footerBg="var(--color-bg-shape)" noMargin={true} />
       </div>
 
     </PageContainer>

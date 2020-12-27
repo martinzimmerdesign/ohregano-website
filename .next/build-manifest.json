@@ -14,6 +14,11 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
+    "/": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
@@ -24,20 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/kontakt": [
+    "/rueckschau": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/kontakt.js"
-    ],
-    "/mitgliederbereich": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/mitgliederbereich.js"
-    ],
-    "/soon": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/soon.js"
+      "static/chunks/pages/rueckschau.js"
     ]
   },
   "ampFirstPages": []

@@ -22,6 +22,7 @@
   width: 100%;
   background-color: var(--color-bg-shape);
   z-index: 100;
+  padding-bottom: 150px;
 }
 
 .left, .middle, .right {
@@ -138,6 +139,10 @@
   .text {
     margin-bottom: 2px;
   }
+
+
+
+
 
 }
 
