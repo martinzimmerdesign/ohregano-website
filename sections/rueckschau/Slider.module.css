@@ -23,10 +23,10 @@
 .dot {
     position: relative;
     display: inline-flex;
-    height: 22px;
-    width: 22px;
+    height: 18px;
+    width: 18px;
     background-color: seagreen;
-    margin: -10px 20px;
+    margin: -8px 20px;
     border-radius: 100px;
 }
 
@@ -39,12 +39,23 @@
 .img_slider {
     background-color: var(--color-footer-secondary);
     width: 100%;
-    height: 1200px;
+    height: 600px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
+
+.img_slider::-webkit-scrollbar {
+    display: none;
+  }
 
 .slide_element {
     background-color: springgreen;
     height: 200px;
     width: 200px;
     margin: 20px;
+    display: inline-flex;
 }
