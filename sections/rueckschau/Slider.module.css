@@ -8,16 +8,16 @@
     justify-content: center;
     margin-top: 100px;
     padding: 50px 0px;
-    max-width: var(--content-max-width);
     margin: 0 auto;
+    color: white;
 }
 
-.line {
+.timeline {
     display: flex;
     justify-content: space-evenly;
     height: 2px;
     width: 100%;
-    background-color: red;
+    background-color: white;
 }
 
 .dot {
@@ -26,8 +26,13 @@
     height: 18px;
     width: 18px;
     background-color: seagreen;
-    margin: -8px 20px;
+    margin: 0px 20px;
     border-radius: 100px;
+    background-color: #b4a58e;
+}
+
+.year {
+    font-size: var(--font-size-paragraph);
 }
 
 .values_bottom {
@@ -39,7 +44,7 @@
 .img_slider {
     background-color: var(--color-footer-secondary);
     width: 100%;
-    height: 600px;
+    height: 1000px;
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -53,9 +58,53 @@
   }
 
 .slide_element {
-    background-color: springgreen;
-    height: 200px;
-    width: 200px;
+    height: auto;
+    width: auto;
     margin: 20px;
     display: inline-flex;
+}
+
+.detailView {
+    position: absolute;
+    z-index: 400;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: inherit;
+    width: 100%;
+    opacity: 1;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.detailImg {
+    height: 800px;
+    width: auto;
+    margin-right: 100px;
+}
+
+.detailClose {
+    height: 50px;
+    width: 50px;
+    float: right;
+}
+
+.detailTitle {
+    font-size: var(--font-size-p-title);
+}
+
+.detailDate {
+    font-size: var(--font-size-paragraph);
+}
+
+.detailText {
+    font-size: var(--font-size-paragraph);
+}
+
+.line {
+    height: 2px;
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--color-main);
 }
