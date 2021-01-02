@@ -46,6 +46,10 @@ export default function Startseite({ data }) {
       enter: { y: 0, opacity: 1 },
       exit: { y: 50, opacity: 0 }
     },
+    cover: {
+      enter: { x: 0, opacity: 1 },
+      exit: { x: 150, opacity: 0 }
+    },
   };
 
   return (
@@ -77,9 +81,9 @@ export default function Startseite({ data }) {
       <div className={styles.container}>
       <ContentContainer>
       <SectionContainer>
-        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.basic} className={styles.left} src="/covers/2006gross.jpg" alt="Chor Cover 1" />
-        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.basic} className={styles.middle} src="/covers/2012tanz_gross.jpg" alt="Chor Cover 2" />
-        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.basic} className={styles.right} src="/covers/2008gross.png" alt="Chor Cover 3" />
+        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.cover} className={styles.left} src="/covers/2006gross.jpg" alt="Chor Cover 1" />
+        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.cover} className={styles.middle} src="/covers/2012tanz_gross.jpg" alt="Chor Cover 2" />
+        <motion.img drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0}} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} variants={variants.cover} className={styles.right} src="/covers/2008gross.png" alt="Chor Cover 3" />
         </SectionContainer>
         </ContentContainer>
 

@@ -9,15 +9,17 @@ import Draggable from 'react-draggable';
 export default function Slider() {
 
   // Welcher/es Dot/Plakat wird gerade fokussiert?
-  const [isFocused, setFocusedElement] = useState(0);
+  const [isFocused, setFocusedElement] = useState(-1);
   // Wurde ein Dot geklickt?
   const [wasDotClicked, setWasDotClicked] = useState(false);
   // Wird gerade gedraggt?
   const [isDragging, setIsDragging] = useState(false);
   // Bild oder Dot geklickt
-  const [wasClicked, setWasClicked] = useState(0);
+  const [wasClicked, setWasClicked] = useState(-1);
   // Detail Ansicht
   const [isToggled, setToggled] = useState(false);
+  // Scroll Value für die Buttons
+  const [scrollValue, setScrollValue] = useState(0);
 
   const onClickHandler = () => {
     setToggled(true);
@@ -25,47 +27,66 @@ export default function Slider() {
   }
 
   const resetDot = () => {
-    setFocusedElement(0);
+    setFocusedElement(-1);
     setWasDotClicked(false);
   }
 
   const resetDragState = () => {
     setTimeout(function() {
       setIsDragging(false)
-    }, 2000);
+    }, 1200);
   }
 
   const variants = {
     content: {
-      open: { opacity: 1, zIndex: 400},
+      open: { opacity: 1, zIndex: 200},
       closed: { opacity: 0, zIndex: -100, transition: {
         when: "afterChildren",
       }, },
-    }
+    },
+    img: {
+      hover: { scale: 1.05},
+      notHover: { scale: 1}
+    },
+    focusedDot: {
+      enter: { backgroundColor: "#b4a58e" , padding: "10px", border: "10px solid rgba(255,255,255,0.95)" },
+      exit: { backgroundColor: "#ffffff", border: "2px solid rgba(255,255,255,0)", padding: "0px" }
+    },
+    focusedDate: {
+      enter: { opacity: 1 , paddingLeft: "10px" },
+      exit: { opacity: 0, paddingLeft: "0px" }
+    },
   }
 
   return (
-    <div>
+    <div style={{overflow: "hidden"}}>
         <div className={styles.time_slider}>
           <div className="content_container">
-            <div className={styles.timeline}>
-              {/* Mappen einen Dot für jedes Plakat */}
-              {rueckschau_data.map((dataElement) =>
-              <div style={{marginTop: "-8px"}}>
-                <div key={dataElement.id} onClick={onClickHandler} className={styles.dot} onMouseEnter={() => setFocusedElement(dataElement.id)} onMouseLeave={resetDot} style={{backgroundColor: isFocused == dataElement.id ? "white" : "#b4a58e"}}></div>
-                <p className={styles.year} style={{textAlign: "center"}}>{isFocused == dataElement.id ? dataElement.year : ""}</p>
-              </div>
-              )}
-            </div>
-            <div className={styles.values_bottom}>
+            <div className={styles.timeline_wrapper}>
+              <p>2014</p>
+              <div className={styles.timeline}></div>
+              <div className={styles.values_bottom}>
               <p className={styles.left_value}>Jetzt</p>
               <p className={styles.right_value}>1990</p>
+            </div>
+              {/* Mappen einen Dot für jedes Plakat */}
+              <div className={styles.dots}>
+              {rueckschau_data.map((dataElement) =>
+              <div>
+                <motion.div transition={{ ease: "easeInOut", duration: 0.2 }} animate={isFocused == dataElement.id ? "enter" : "exit"} variants={variants.focusedDot} key={dataElement.id} onClick={onClickHandler} className={styles.dot} onMouseEnter={() => setFocusedElement(dataElement.id)} onMouseLeave={resetDot}></motion.div>
+                <motion.p transition={{ ease: "easeInOut", duration: 0.2 }} animate={isFocused == dataElement.id ? "enter" : "exit"} variants={variants.focusedDate} className={styles.year}>{isFocused == dataElement.id ? dataElement.year : ""}</motion.p>
+              </div>
+              )}
+              </div>
             </div>
           </div>
         </div>
         <div className={styles.img_slider}>
-          
-          <Draggable
+        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{left: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue + 1000)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/left-chevron.png" alt="Next Icon" />
+        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{right: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue - 1000)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/right-chevron.png" alt="Next Icon" />
+        
+          <div transition={{ ease: "easeInOut", duration: 0.8 }} animate={{x: scrollValue}}>
+          {/* <Draggable
           axis="x"
           handle=".handle"
           defaultPosition={{x: 0, y: 0}}
@@ -73,22 +94,24 @@ export default function Slider() {
           grid={[25, 25]}
           onDrag={() => setIsDragging(true)}
           onStop={resetDragState}
-          scale={1}>
-            <div style={{display: "flex", alignItems: "center"}}>
+          scale={1}> */}
+            <div style={{display: "flex", flexDirection: "row-reverse", alignItems: "center"}}>
               {/* Mappen für jedes Plakat das Bild im Slider, sowie die Detail-Ansicht (lazy) */}
               {rueckschau_data.map((dataElement) =>
-                  <div className="handle" style={{display: "inline-flex", marginRight: "-200px"}}>
+                  <motion.div className="handle" style={{display: "inline-flex", marginRight: "-200px", cursor: "pointer"}}>
                     <SliderElement key={dataElement.id} dataElement={dataElement} onClickHandler={onClickHandler} isFocused={isFocused} setFocusedElement={setFocusedElement} isDragging={isDragging}/>
-                  </div>
+                  </motion.div>
               )}
             </div> 
-          </Draggable>
+          {/* </Draggable> */} 
+          </div>
           <motion.div initial="closed" animate={isToggled ? "open" : "closed"} transition={{ ease: "easeInOut", duration: 0.2 }} variants={variants.content} className={styles.detailView}>
+            {wasClicked >= 0 ?
             <div className="content_container">
-              <img className={styles.detailClose} onClick={() => setToggled(false)} draggable="false" src="/icons/error.png" alt="Back Button Icon" />
+              <motion.img whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.90 }} className={styles.detailClose} onClick={() => setToggled(false)} draggable="false" src="/icons/error.png" alt="Back Button Icon" />
               <div style={{display: "flex"}}>
                 <div>
-                  <img className={styles.detailImg} draggable="false" src={rueckschau_data[wasClicked].img} alt="Arrow Icon" />
+                  <motion.img whileHover={{ scale: 1.05 }} className={styles.detailImg} draggable="false" src={rueckschau_data[wasClicked].img} alt="Arrow Icon" />
                 </div>
                 <div style={{display: "flex", flexDirection: "column"}}>
                   <p className={styles.detailTitle}>{rueckschau_data[wasClicked].title}</p>
@@ -97,7 +120,7 @@ export default function Slider() {
                   <p className={styles.detailText}>{rueckschau_data[wasClicked].text}</p>
                 </div>
               </div>
-            </div>
+            </div> : <div></div>}
           </motion.div>
         </div>
     </div>

@@ -1,11 +1,50 @@
 .cover {
     pointer-events: none;
-    height: auto;
-    width: auto;
-    max-width: 420px;
+    max-width: 300px;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+}
+
+.slide_element {
+    border: 2px solid rgba(0,0,0,0);
+}
+
+.slide_element:hover {
+    border: 2px solid white;
+    padding: 20px;
+}
+
+/* Mobile */
+@media (min-width: 43em) {
+
+    .cover {
+        max-width: 300px;
+    }
+
+}
+  
+/* Tablet */
+@media (min-width: 62em) {
+
+}
+
+/* Desktop */
+@media (min-width: 82em) {
+
+    .cover {
+        max-width: 320px;
+    }
+
+}
+
+/* Desktop Big */
+@media (min-width: 102em) {
+
+    .cover {
+        max-width: 420px;
+    }
+
 }
