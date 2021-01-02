@@ -30,9 +30,6 @@
         max-width: var(--content-max-width);
         flex-direction: column;
         margin: 20px 0px;
-        border: 1px solid rgb(150, 150, 150);
-        padding: 20px;
-        border-radius: 10px;
     }
 
     .row_wrapper {
@@ -131,6 +128,12 @@
   
   /* Tablet */
   @media (min-width: 62em) {
+
+    .table {
+        border: 1px solid rgb(150, 150, 150);
+        padding: 20px;
+        border-radius: 10px;
+    }
 
     .row_element:nth-child(3) {
         display: block;
