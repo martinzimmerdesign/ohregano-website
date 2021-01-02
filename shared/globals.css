@@ -116,6 +116,10 @@ a {
   text-decoration: none;
 }
 
+.link {
+  text-decoration: underline;
+}
+
 * {
   box-sizing: border-box;
 }
