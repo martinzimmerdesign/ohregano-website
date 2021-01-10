@@ -82,6 +82,11 @@
     display: none;
   }
 
+.scroll_container {
+    display: flex;
+    align-items: center;
+}
+
   .imgButton {
     display: none;
 }
