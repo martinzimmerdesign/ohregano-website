@@ -138,6 +138,19 @@
   margin-top: 20px;
 }
 
+.hint {
+  display: none;
+  position: absolute;
+  margin-top: 180px;
+  background-color: #fafafa;
+  border: 1px solid #fafafa;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: normal;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.1);
+  transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
 /* Tablet */
 /* 420 * 2 + 30 * 2 + 70 * 2 */
 @media (min-width: 1040px) {
@@ -168,4 +181,18 @@
     justify-content: flex-end;
   }
 
+}
+
+/* Desktop */
+@media (min-width: 82em) {
+
+  .hint {
+    opacity: 0;
+    display: block;
+  }
+
+  .checkbox_wrapper:hover > .hint {
+    opacity: 1;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  }
 }

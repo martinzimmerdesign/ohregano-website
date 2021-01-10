@@ -18,7 +18,7 @@ const rueckschau_data = [
         },
         {
             id: 2,
-            year: 2014,
+            year: '06.12.2014',
             img: '/covers/2012tanz_gross.jpg',
             title: "Hund Katze Maus",
             date: "15. Juli 2008",

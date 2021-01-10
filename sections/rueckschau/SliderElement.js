@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react'
 
 export default function SliderElement(props) {
 
-
-
     const onClick = () => {
         console.log("Wird geklickt");
         props.setFocusedElement(props.dataElement.id);

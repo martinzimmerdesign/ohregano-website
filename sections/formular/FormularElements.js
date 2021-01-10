@@ -30,6 +30,7 @@ export const CheckboxElement = ({ id, name, className }) =>
               <span className={styles.checkbox}></span>
               </label>
               {/* Temp */}
+              <h5 className={styles.hint}>Deine Eingaben werden beim Lesen lokal zwischengespeichert.</h5>
               <p>Hiermit bestätige ich die <Link href="datenschutzerklaerung"><a>Datenschutzerklärung</a></Link> gelesen zu haben und akzeptiere diese im vollen Unfang!</p>
           </div>
           );
