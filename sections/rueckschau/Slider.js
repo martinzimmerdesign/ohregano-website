@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import SliderElement from './SliderElement.js';
 import rueckschau_data from './RueckschauData.js';
-import Draggable from 'react-draggable';
 import ScrollContainer from 'react-indiana-drag-scroll'
 
 export default function Slider() {
@@ -88,31 +87,18 @@ export default function Slider() {
           </div>
         </div>
         <div className={styles.img_slider}>
-        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{left: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue + 1000)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/left-chevron.png" alt="Next Icon" />
-        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{right: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue - 1000)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/right-chevron.png" alt="Next Icon" />
+        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{left: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue + 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/left-chevron.png" alt="Next Icon" />
+        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{right: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue - 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/right-chevron.png" alt="Next Icon" />
         
-        {/*<motion.div style={{display: "flex"}} transition={{ ease: "easeInOut", duration: 0.8 }} animate={{x: scrollValue}}>*/}
-          <ScrollContainer className={styles.scroll_container}>
-          {/*<Draggable
-          axis="x"
-          handle=".handle"
-          defaultPosition={{x: 0, y: 0}}
-          position={null}
-          grid={[25, 25]}
-          onDrag={() => setIsDragging(true)}
-          onStop={resetDragState}
-          scale={1}> */}
-          
-
+        <ScrollContainer className={styles.scroll_container}>
+            <motion.div transition={{ ease: "easeInOut", duration: 0.8 }} animate={{x: scrollValue + "vw"}} className={styles.cover_wrapper}>
               {rueckschau_data.map((dataElement, index) =>
                   <motion.div key={`Key${index}`} className="handle" style={{display: "inline-flex", marginRight: "-100px"}}>
                     <SliderElement key={dataElement.id} dataElement={dataElement} onClickHandler={onClickHandler} isFocused={isFocused} setFocusedElement={setFocusedElement} isDragging={isDragging}/>
                   </motion.div>
               )}
-            
-          {/*</Draggable>*/}
+            </motion.div>  
           </ScrollContainer>
-          {/*</motion.div>*/}
           
           <motion.div initial="closed" animate={isToggled ? "open" : "closed"} transition={{ ease: "easeInOut", duration: 0.2 }} variants={variants.content} className={styles.detailView}>
             {wasClicked >= 0 ?
