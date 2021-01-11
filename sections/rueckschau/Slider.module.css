@@ -8,6 +8,7 @@
     margin-top: 100px;
     padding: 50px 0px;
     color: white;
+    display: none;
 }
 
 .timeline_wrapper {
@@ -89,7 +90,7 @@
     overflow-x: scroll;
     overflow-y: hidden;
     cursor: pointer;
-    padding: 0px 400px;
+    padding-right: 150px; /* Offset right value */
 }
 
   .imgButton {

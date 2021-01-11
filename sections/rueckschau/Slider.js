@@ -105,7 +105,7 @@ export default function Slider() {
           
 
               {rueckschau_data.map((dataElement, index) =>
-                  <motion.div key={`Key${index}`} className="handle" style={{display: "inline-flex", marginRight: "-200px"}}>
+                  <motion.div key={`Key${index}`} className="handle" style={{display: "inline-flex", marginRight: "-100px"}}>
                     <SliderElement key={dataElement.id} dataElement={dataElement} onClickHandler={onClickHandler} isFocused={isFocused} setFocusedElement={setFocusedElement} isDragging={isDragging}/>
                   </motion.div>
               )}
