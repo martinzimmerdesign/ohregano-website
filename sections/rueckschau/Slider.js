@@ -39,6 +39,12 @@ export default function Slider() {
   }
 
   const variants = {
+    content2: {
+      open: { y: 0, opacity: 1, zIndex: 200},
+      closed: { y: "100vh", opacity: 0, zIndex: -100, transition: {
+        when: "afterChildren",
+      }, },
+    },
     content: {
       open: { opacity: 1, zIndex: 200},
       closed: { opacity: 0, zIndex: -100, transition: {
@@ -85,7 +91,7 @@ export default function Slider() {
         <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{left: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue + 1000)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/left-chevron.png" alt="Next Icon" />
         <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{right: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue - 1000)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/right-chevron.png" alt="Next Icon" />
         
-          
+        {/*<motion.div style={{display: "flex"}} transition={{ ease: "easeInOut", duration: 0.8 }} animate={{x: scrollValue}}>*/}
           <ScrollContainer className={styles.scroll_container}>
           {/*<Draggable
           axis="x"
@@ -96,18 +102,17 @@ export default function Slider() {
           onDrag={() => setIsDragging(true)}
           onStop={resetDragState}
           scale={1}> */}
-          {/*<motion.div className={styles.slider_parent} transition={{ ease: "easeInOut", duration: 0.8 }} animate={{x: scrollValue}}>
-            <div onClick={() => console.log("huhu")} style={{display: "flex", flexDirection: "row-reverse", alignItems: "center"}}> */}
-              {/* Mappen für jedes Plakat das Bild im Slider, sowie die Detail-Ansicht (lazy) */}
+          
+
               {rueckschau_data.map((dataElement, index) =>
-                  <motion.div key={`Key${index}`} className="handle" style={{display: "inline-flex", marginRight: "-200px", cursor: "pointer"}}>
+                  <motion.div key={`Key${index}`} className="handle" style={{display: "inline-flex", marginRight: "-200px"}}>
                     <SliderElement key={dataElement.id} dataElement={dataElement} onClickHandler={onClickHandler} isFocused={isFocused} setFocusedElement={setFocusedElement} isDragging={isDragging}/>
                   </motion.div>
               )}
-            {/*</div> 
-            </motion.div>*/}
+            
           {/*</Draggable>*/}
           </ScrollContainer>
+          {/*</motion.div>*/}
           
           <motion.div initial="closed" animate={isToggled ? "open" : "closed"} transition={{ ease: "easeInOut", duration: 0.2 }} variants={variants.content} className={styles.detailView}>
             {wasClicked >= 0 ?

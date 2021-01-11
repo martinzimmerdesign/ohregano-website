@@ -16,8 +16,8 @@ export default function SliderElement(props) {
           exit: { y: 50, opacity: 0 }
         },
         frame: {
-            enter: { border: "2px solid rgba(255,255,255,1)", padding: "20px" },
-            exit: { border: "2px solid rgba(0,0,0,0)", padding: "0px" }
+            /* enter: { border: "2px solid rgba(255,255,255,1)", padding: "20px" },
+            exit: { border: "2px solid rgba(0,0,0,0)", padding: "0px" } */
           },
       };
 

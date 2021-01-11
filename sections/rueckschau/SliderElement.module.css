@@ -12,10 +12,10 @@
     border: 2px solid rgba(0,0,0,0);
 }
 
-.slide_element:hover {
+/* .slide_element:hover {
     border: 2px solid white;
     padding: 20px;
-}
+} */
 
 /* Mobile */
 @media (min-width: 43em) {
