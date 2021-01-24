@@ -19,3 +19,15 @@
   background-color: #232323;
   width: 100%;
 }
+
+/* Mobile */
+@media (max-width: 33em) {
+  .container {
+    margin-top: 120px;
+  }
+
+  .title {
+    margin-top: 0px;
+  }
+
+}

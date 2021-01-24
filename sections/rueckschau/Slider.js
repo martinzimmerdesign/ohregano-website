@@ -15,7 +15,7 @@ export default function Slider() {
   // Wird gerade gedraggt?
   const [isDragging, setIsDragging] = useState(false);
   // Bild oder Dot geklickt
-  const [wasClicked, setWasClicked] = useState(-1);
+  const [wasClicked, setWasClicked] = useState(0);
   // Detail Ansicht
   const [isToggled, setToggled] = useState(false);
   // Scroll Value für die Buttons
@@ -62,13 +62,23 @@ export default function Slider() {
       enter: { opacity: 1 , paddingLeft: "10px" },
       exit: { opacity: 0, paddingLeft: "0px" }
     },
+    /* Animation des Timeline Wrapper*/
+    basic: {
+      enter: { opacity: 1 },
+      exit: { opacity: 0 }
+    },
+    /* Animation für die einzelnen Cover*/
+    slideWrapper: {
+      enter: { opacity: 1 , x: 0 },
+      exit: { opacity: 0, x: -100 }
+    },
   } 
 
   return (
     <div style={{overflow: "hidden"}}>
         <div className={styles.time_slider}>
           <div className="content_container">
-            <div className={styles.timeline_wrapper}>
+            <motion.div transition={{ ease: "easeInOut", duration: 0.2 }} variants={variants.basic} className={styles.timeline_wrapper}>
               <div className={styles.timeline}></div>
               <div className={styles.values_bottom}>
               <p className={styles.left_value}>Jetzt</p>
@@ -83,17 +93,17 @@ export default function Slider() {
               </div>
               )}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className={styles.img_slider}>
-        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{left: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue + 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/left-chevron.png" alt="Next Icon" />
+        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{left: "var(--border-width)", display: scrollValue < 0 ? "block" : "none"}} onClick={() => setScrollValue(scrollValue + 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/left-chevron.png" alt="Next Icon" />
         <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{right: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue - 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/right-chevron.png" alt="Next Icon" />
         
         <ScrollContainer className={styles.scroll_container}>
             <motion.div transition={{ ease: "easeInOut", duration: 0.8 }} animate={{x: scrollValue + "vw"}} className={styles.cover_wrapper}>
               {rueckschau_data.map((dataElement, index) =>
-                  <motion.div key={`Key${index}`} className="handle" style={{display: "inline-flex", marginRight: "-100px"}}>
+                  <motion.div variants={variants.slideWrapper} key={`Key${index}`} className="handle" style={{display: "inline-flex", marginRight: "-100px"}}>
                     <SliderElement key={dataElement.id} dataElement={dataElement} onClickHandler={onClickHandler} isFocused={isFocused} setFocusedElement={setFocusedElement} isDragging={isDragging}/>
                   </motion.div>
               )}
