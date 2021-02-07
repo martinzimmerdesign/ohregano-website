@@ -15,15 +15,20 @@ export default function Slider() {
   // Wird gerade gedraggt?
   const [isDragging, setIsDragging] = useState(false);
   // Bild oder Dot geklickt
-  const [wasClicked, setWasClicked] = useState(0);
+  const [wasClicked, setWasClicked] = useState(-1);
   // Detail Ansicht
   const [isToggled, setToggled] = useState(false);
   // Scroll Value für die Buttons
   const [scrollValue, setScrollValue] = useState(0);
 
   const onClickHandler = () => {
-    setToggled(true);
+    /* Problem: Kein Hover - Daher anfangs auf -1 und daher wird nichts gerendert. onClick überschreibt nicht? WIESO NICHT?*/
+    console.log(isFocused);
     setWasClicked(isFocused);
+    console.log(isFocused);
+    setTimeout(function() {
+      setToggled(true);
+    }, 1200);
   }
 
   const resetDot = () => {
@@ -36,6 +41,8 @@ export default function Slider() {
       setIsDragging(false)
     }, 1200);
   }
+
+  console.log(wasClicked);
 
   const variants = {
     content2: {
@@ -67,10 +74,10 @@ export default function Slider() {
       enter: { opacity: 1 },
       exit: { opacity: 0 }
     },
-    /* Animation für die einzelnen Cover*/
+    /* Animation für die einzelnen Cover */
     slideWrapper: {
-      enter: { opacity: 1 , x: 0 },
-      exit: { opacity: 0, x: -100 }
+      enter: { opacity: 1 , x: 0, zIndex: 30 },
+      exit: { opacity: 0, x: -100, zIndex: 20 }
     },
   } 
 

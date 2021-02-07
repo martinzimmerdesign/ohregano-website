@@ -13,13 +13,15 @@ export default function Rueckschau() {
   return (
     <div>
     <PageContainer withFooter={true} menuTypeLanding={false} menuVisibility={true} noMargin={true}>
-    <SectionContainer>
       <ContentContainer>
+        <SectionContainer>
             <Title title="Rückschau" caps={false} />
             <Paragraph sectionTitle={false} title="Wir haben viel erlebt." text="Unser Chor wurde 1990 in Lüneburg gegründet und bestand zunächst aus einem kleinen privaten, singbegeisterten Freundeskreis." />
             <Paragraph sectionTitle={false} text="Klicke und bewege die Plakate für mehr Informationen." />
+        </SectionContainer>
       </ContentContainer>
-      <Slider />
+      <SectionContainer>
+        <Slider />
       </SectionContainer>
     </PageContainer>
     </div>

@@ -32,7 +32,7 @@ export default function Footer({ footerBg, noMargin }) {
                 </motion.p>
             </div>
             <motion.div variants={variants.basic} className={styles.bottom}>
-            <p className="note" style={{color: "white", opacity: "0.4", padding: "20px 0px"}}>Copyright © 2020 Ohregano - Alle Rechte vorbehalten.</p>
+            <p className="note" style={{color: "white", opacity: "0.4", padding: "20px 0px"}}>Copyright © 2021 Ohregano - Alle Rechte vorbehalten.</p>
             <img className={styles.logo} src="/icons/logo-mzd.png" alt="Martin Zimmer Design Logo" />
             </motion.div>
           </SectionContainer>

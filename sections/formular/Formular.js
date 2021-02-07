@@ -5,14 +5,13 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { motion } from "framer-motion";
 import { useEffect } from 'react';
-import Button from 'components/button/Button.js';
 
 const validationSchema = Yup.object({
-  name: Yup.string("Gib deinen Namen ein.").required("Denk an deinen Namen."),
-  email: Yup.string("Gib deine E-Mail ein.").email("E-Mail braucht gültiges Format.").required("Denk an deine E-Mail."),
-  subject: Yup.string("Gib den Betreff ein.").required("Was ist der Betreff?"),
-  message: Yup.string("Gib deine Nachricht ein.").required("Was möchtest du mir sagen?"),
-  checkbox: Yup.boolean("Akzeptiere die Datenschutzerklärung").oneOf([true], "Stimm der Datenschutzerklärung zu.").required("Stimm der Datenschutzerklärung zu."),
+  name: Yup.string("Geben Sie ihren Namen ein.").required("Denken Sie an ihren Namen."),
+  email: Yup.string("Geben Sie ihre E-Mail ein.").email("E-Mail braucht gültiges Format.").required("Denken Sie an ihre E-Mail."),
+  subject: Yup.string("Geben Sie den Betreff ein.").required("Was ist der Betreff?"),
+  message: Yup.string("Geben Sie ihre Nachricht ein.").required("Was möchten Sie uns mitteilen?"),
+  checkbox: Yup.boolean("Akzeptieren Sie die Datenschutzerklärung").oneOf([true], "Stimmen Sie der Datenschutzerklärung zu.").required("Stimmen Sie der Datenschutzerklärung zu."),
 });
 
 const ErrorMessageReturn = (props) => {
@@ -25,10 +24,11 @@ const encode = (data) => {
     .join("&");
 }
 
-let values = {}
+let values = { name: "", email: "", subject: "", message: "", checkbox: ""};
+
 if (typeof window !== "undefined") {
   values = { name: sessionStorage.name, email: sessionStorage.email, subject: sessionStorage.subject, message: sessionStorage.message, checkbox: ""};
-}
+}  
 
 function handleClick() {
     sessionStorage.name = document.getElementsByName("name")[0].value;
@@ -40,13 +40,6 @@ function handleClick() {
     sessionStorage.message = document.getElementsByName("message")[0].value;
     values.message = sessionStorage.message;
 }
-
-const variants = {
-  basic: {
-    enter: { y: 0, opacity: 1 },
-    exit: { y: 50, opacity: 0 }
-  },
-};
 
 export default function Formular() {
 
@@ -70,6 +63,8 @@ export default function Formular() {
     }
   };
 
+  let hideForm = false
+  let formSubmitState = ""
 
   return (
     <div>
@@ -84,11 +79,16 @@ export default function Formular() {
             body: encode({ "form-name": "contact", ...values })
           })
           .then(() => {
-            alert('Ihre Nachricht wurde gesendet. Vielen Dank!');
-            actions.resetForm()
+            formSubmitState = 'Ihre Nachricht wurde gesendet. Vielen Dank!'
+            hideForm = true
+            values.name = "";
+            values.email = "";
+            values.subject = "";
+            values.message = "";
           })
           .catch(() => {
-            alert('Es ist etwas schief gelaufen. Schreibe uns bitte direkt per E-Mail.');
+            hideForm = true
+            formSubmitState = 'Es ist etwas schief gelaufen. Schreibe uns bitte direkt per E-Mail: chorleiter@ohregano.de'
           })
           .finally(() => actions.setSubmitting(false))
         }
@@ -96,9 +96,11 @@ export default function Formular() {
       >
         {({ isSubmitting }) => (
             <Form name="contact" data-netlify={true} >
-              <div className={styles.outer}>
+              <div style={{margin: hideForm ? "100px 0px" : "100px auto"}} className={styles.outer}>
               <motion.h1 variants={variants.basic} className={styles.form_title}>Kontaktformular</motion.h1>
               <motion.div variants={variants.basic} className={styles.line}></motion.div>
+              <motion.p variants={variants.basic} className={styles.paragraph}>{formSubmitState}</motion.p>
+              <div style={{display: hideForm ? "none" : "block"}}>
                 <div className={styles.container}>
                   <motion.div variants={variants.basic} className={styles.wrapper}>
                     <ErrorMessage name="name" render={msg => <ErrorMessageReturn>{msg}</ErrorMessageReturn>} />
@@ -116,12 +118,13 @@ export default function Formular() {
                   </motion.div>
                 </div>
                 <div className={styles.button}>
-                <motion.button type="submit" disabled={isSubmitting} whileHover="hover" whileTap="tap" variants={variants.basic} style={{backgroundColor: "var(--color-main)", border: 0}} className={stylesButton.container + " disable_select"}>
+                <motion.button type="submit" disabled={isSubmitting} /*whileHover="hover" whileTap="tap" */ variants={variants.basic} style={{backgroundColor: "var(--color-main)", border: 0}} className={stylesButton.container + " disable_select"}>
                   <p className={stylesButton.title}>Senden</p>
                   {/* Static img directly imported from public/ */}
                   <motion.img variants={variants.arrow} className={stylesButton.icon} style={{width: "42px"}} src="/icons/arrow.png" alt="Button Icon" />
                 </motion.button>
                 </div>
+              </div>  
             </div>
           </Form>
         )}
