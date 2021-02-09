@@ -15,7 +15,7 @@ import stylesButton from 'components/button/Button.module.css';
 
 export default function Mitgliederbereich() {
 
-    const [input, setInput] = useState('singvogel');
+    const [input, setInput] = useState('');
     const [displayTable, setDisplayTable] = useState(false);
     const [renderTable, setRenderTable] = useState([]);
 
