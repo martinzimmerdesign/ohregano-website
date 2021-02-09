@@ -118,10 +118,12 @@ export default function Formular() {
                   </motion.div>
                 </div>
                 <div className={styles.button}>
-                <motion.button type="submit" disabled={isSubmitting} /*whileHover="hover" whileTap="tap" */ variants={variants.basic} style={{backgroundColor: "var(--color-main)", border: 0}} className={stylesButton.container + " disable_select"}>
+                <motion.button type="submit" disabled={isSubmitting} style={{backgroundColor: "transparent", border: "0"}} variants={variants.basic} className="disable_select">
+                  <div style={{backgroundColor: "var(--color-main)", border: 0}} className={stylesButton.container}>
                   <p className={stylesButton.title}>Senden</p>
                   {/* Static img directly imported from public/ */}
                   <motion.img variants={variants.arrow} className={stylesButton.icon} style={{width: "42px"}} src="/icons/arrow.png" alt="Button Icon" />
+                  </div>
                 </motion.button>
                 </div>
               </div>  

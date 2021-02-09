@@ -120,10 +120,12 @@ export default function Mitgliederbereich() {
                 <div className={styles.login_wrapper}>
                     <motion.p variants={variants.basic}>{errorMessage}</motion.p>
                     <motion.input type="password" variants={variants.basic} className={styles.input} value={input} onChange={e => setInput(e.target.value)}/>
-                    <motion.button onClick={handleClick} whileHover="hover" whileTap="tap" variants={variants.basic} style={{backgroundColor: "var(--color-main)", border: 0}} className={stylesButton.container + " disable_select"}>
+                    <motion.button onClick={handleClick} variants={variants.basic} style={{backgroundColor: "transparent", border: 0}} className="disable_select">
+                        <div style={{backgroundColor: "var(--color-main)", border: 0}} className={stylesButton.container}>
                         <p className={stylesButton.title}>Login</p>
                         {/* Static img directly imported from public/ */}
                         <motion.img variants={variants.arrow} className={stylesButton.icon} style={{width: "42px"}} src="/icons/arrow.png" alt="Button Icon" />
+                        </div>
                     </motion.button>
                 </div>
             </SectionContainer>

@@ -27,10 +27,12 @@ export default function Button({ title, link, color }) {
   return (
     <Link href={"/" + link}>
       {/* Change default-color to custom-color*/}
-      <motion.div variants={variants.basic} style={{backgroundColor: color == undefined ? "var(--color-main)" : color.toString() }} className={styles.container + " disable_select"}>
+      <motion.div variants={variants.basic} className=" disable_select">
+        <div style={{backgroundColor: color == undefined ? "var(--color-main)" : color.toString() }} className={styles.container}>
         <a className={styles.title}>{title}</a>
         {/* Static img directly imported from public/ */}
         <motion.img variants={variants.arrow} className={styles.icon} src="/icons/arrow.png" alt="Button Icon" />
+        </div>
       </motion.div>
     </Link>
   )

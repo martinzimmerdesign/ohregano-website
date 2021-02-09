@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 function SectionContainer (props) {
 
     let thres = props.threshold
-    console.log(thres)
 
     const [ref, inView, entry] = useInView({
       threshold: thres === undefined ? 0.2 : thres,

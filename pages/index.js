@@ -98,7 +98,7 @@ export default function Startseite({ data }) {
           <ContentContainer>
             <SectionContainer>
               <Paragraph sectionTitle={true} title="Diversität." text="Große Gesamtwerke, wie z. B. Carmina Burana von Carl Orff, Canto General von Mikis Theodorakis und Misa Criolla von Ariel Ramirez, wechseln sich ab mit Liederprogrammen: „Liebe zwischen den Zeilen“, „Lieder von Grau bis Schwarz“, „Meine erste Single“ oder „Liederliche Arbeit“." />
-              <Button title="rückschau" link="rueckschau" color="#F7882F" />
+              <Button title="rückschau" link="soon" color="#F7882F" />
             </SectionContainer>
           </ContentContainer>
         </div>
