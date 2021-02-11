@@ -6,9 +6,9 @@ import { useInView } from 'react-intersection-observer';
 export default function SliderElement(props) {
 
     const [ref, inView, entry] = useInView({
-      threshold: 0.2,
+      threshold: 0.1,
       triggerOnce: true,
-      delay: 0.3
+      delay: 0.1
     })
 
     const onClick = () => {
@@ -34,7 +34,7 @@ export default function SliderElement(props) {
     animate={inView ? "enter" : "exit"}
     initial="exit"
     variants={variants.basic} transition={{ ease: "easeInOut", duration: 0.4 }}>
-        <motion.div animate={bool ? "enter" : "exit"} variants={variants.frame} onClick={props.isDragging == false ? onClick : null} onMouseEnter={() => props.setFocusedElement(props.dataElement.id)} onMouseLeave={() => props.setFocusedElement(-1)} className={styles.slide_element}>
+        <motion.div animate={bool ? "enter" : "exit"} variants={props.width > 1280 ? variants.frame : ""} onClick={props.isDragging == false ? onClick : null} onMouseEnter={() => props.setFocusedElement(props.dataElement.id)} onMouseLeave={() => props.setFocusedElement(-1)} className={styles.slide_element}>
         <img onClick={props.isDragging == false ? onClick : null} draggable="false" className={styles.cover} src={props.dataElement.img} alt="Cover Img" />
         </motion.div>
     </motion.div>

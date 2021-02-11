@@ -6,29 +6,28 @@ import SliderElement from './SliderElement.js';
 import rueckschau_data from './RueckschauData.js';
 import ScrollContainer from 'react-indiana-drag-scroll'
 
-export default function Slider() {
+var once = false;
+
+export default function Slider(props) {
 
   // Welcher/es Dot/Plakat wird gerade fokussiert?
-  const [isFocused, setFocusedElement] = useState(-1);
+  const [isFocused, setFocusedElement] = useState(1);
   // Wurde ein Dot geklickt?
   const [wasDotClicked, setWasDotClicked] = useState(false);
   // Wird gerade gedraggt?
   const [isDragging, setIsDragging] = useState(false);
   // Bild oder Dot geklickt
-  const [wasClicked, setWasClicked] = useState(-1);
+  const [wasClicked, setWasClicked] = useState(1);
   // Detail Ansicht
   const [isToggled, setToggled] = useState(false);
   // Scroll Value für die Buttons
   const [scrollValue, setScrollValue] = useState(0);
+ 
 
   const onClickHandler = () => {
     /* Problem: Kein Hover - Daher anfangs auf -1 und daher wird nichts gerendert. onClick überschreibt nicht? WIESO NICHT?*/
-    console.log(isFocused);
     setWasClicked(isFocused);
-    console.log(isFocused);
-    setTimeout(function() {
-      setToggled(true);
-    }, 1200);
+    setToggled(true);
   }
 
   const resetDot = () => {
@@ -36,23 +35,15 @@ export default function Slider() {
     setWasDotClicked(false);
   }
 
-  const resetDragState = () => {
-    setTimeout(function() {
-      setIsDragging(false)
-    }, 1200);
-  }
-
-  console.log(wasClicked);
-
   const variants = {
     content2: {
-      open: { y: 0, opacity: 1, zIndex: 200},
+      open: { y: 0, opacity: 1, zIndex: 800},
       closed: { y: "100vh", opacity: 0, zIndex: -100, transition: {
         when: "afterChildren",
       }, },
     },
     content: {
-      open: { opacity: 1, zIndex: 200},
+      open: { opacity: 1, zIndex: 800},
       closed: { opacity: 0, zIndex: -100, transition: {
         when: "afterChildren",
       }, },
@@ -104,14 +95,14 @@ export default function Slider() {
           </div>
         </div>
         <div className={styles.img_slider}>
-        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{left: "var(--border-width)", display: scrollValue < 0 ? "block" : "none"}} onClick={() => setScrollValue(scrollValue + 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/left-chevron.png" alt="Next Icon" />
-        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{right: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue - 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/right-chevron.png" alt="Next Icon" />
+        {/*<motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{left: "var(--border-width)", display: scrollValue < 0 ? "block" : "none"}} onClick={() => setScrollValue(scrollValue + 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/left-chevron.png" alt="Next Icon" />
+        <motion.img transition={{ ease: "easeInOut", duration: 0.2 }} style={{right: "var(--border-width)"}} onClick={() => setScrollValue(scrollValue - 70)} className={styles.imgButton} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} src="/icons/right-chevron.png" alt="Next Icon" />*/}
         
         <ScrollContainer className={styles.scroll_container}>
             <motion.div transition={{ ease: "easeInOut", duration: 0.8 }} animate={{x: scrollValue + "vw"}} className={styles.cover_wrapper}>
               {rueckschau_data.map((dataElement, index) =>
                   <motion.div variants={variants.slideWrapper} key={`Key${index}`} className="handle" style={{display: "inline-flex", marginRight: "-100px"}}>
-                    <SliderElement key={dataElement.id} dataElement={dataElement} onClickHandler={onClickHandler} isFocused={isFocused} setFocusedElement={setFocusedElement} isDragging={isDragging}/>
+                    <SliderElement width={props.size.width} key={dataElement.id} dataElement={dataElement} onClickHandler={onClickHandler} isFocused={isFocused} setFocusedElement={setFocusedElement} isDragging={isDragging}/>
                   </motion.div>
               )}
             </motion.div>  

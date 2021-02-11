@@ -14,11 +14,11 @@ const rueckschau_data = [
             img: '/covers/2006gross.jpg',
             title: "Meine erste Single",
             date: "15. Juli 2008",
-            text: ""
+            text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
         },
         {
             id: 2,
-            year: '06.12.2014',
+            year: 1990,
             img: '/covers/2012tanz_gross.jpg',
             title: "Hund Katze Maus",
             date: "15. Juli 2008",
@@ -38,7 +38,7 @@ const rueckschau_data = [
             img: '/covers/2006gross.jpg',
             title: "Meine erste Single",
             date: "15. Juli 2008",
-            text: ""
+            text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
         },
         {
             id: 5,
@@ -62,7 +62,7 @@ const rueckschau_data = [
             img: '/covers/2006gross.jpg',
             title: "Meine erste Single",
             date: "15. Juli 2008",
-            text: ""
+            text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
         },
         {
             id: 8,
@@ -86,7 +86,7 @@ const rueckschau_data = [
             img: '/covers/2006gross.jpg',
             title: "Meine erste Single",
             date: "15. Juli 2008",
-            text: ""
+            text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
         },
         {
             id: 11,
@@ -110,7 +110,7 @@ const rueckschau_data = [
             img: '/covers/2006gross.jpg',
             title: "Meine erste Single",
             date: "15. Juli 2008",
-            text: ""
+            text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
         },
         {
             id: 14,
@@ -134,7 +134,7 @@ const rueckschau_data = [
             img: '/covers/2006gross.jpg',
             title: "Meine erste Single",
             date: "15. Juli 2008",
-            text: ""
+            text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
         },
 
     ]

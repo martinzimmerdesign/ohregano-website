@@ -29,10 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/kontakt": [
+    "/rueckschau": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/kontakt.js"
+      "static/chunks/pages/rueckschau.js"
     ]
   },
   "ampFirstPages": []

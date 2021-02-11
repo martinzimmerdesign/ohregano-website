@@ -6,9 +6,12 @@ import ContentContainer from '../components/container/ContentContainer.js'
 import SectionContainer from '../components/container/SectionContainer.js'
 import Paragraph from '../components/paragraph/Paragraph.js'
 import Slider from '../sections/rueckschau/Slider.js'
+import useWindowSize from '../hooks/useWindowSize.js'
 
 export default function Rueckschau() {
 
+  // get width and height
+  const size = useWindowSize();
 
   return (
     <div>
@@ -21,7 +24,7 @@ export default function Rueckschau() {
         </SectionContainer>
       </ContentContainer>
       <SectionContainer>
-        <Slider />
+        <Slider size={size}/>
       </SectionContainer>
     </PageContainer>
     </div>
