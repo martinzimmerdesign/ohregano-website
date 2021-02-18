@@ -16,7 +16,7 @@ export default function Termine() {
         <Title title="Termine" caps={false} />
         <Paragraph sectionTitle={false} title="Konzerte in Lüneburg und Umgebung." text="Aus Anlass der Covid-19 Pandemie ist es uns aktuell nicht möglich, einen Ausblick auf künftige Veranstaltungen unseres Chores zu geben. Sobald wir wieder Konzerte geben dürfen, informieren wir Sie an dieser Stelle darüber." />
         <Paragraph sectionTitle={false} text="Bleiben Sie gesund und uns gewogen." />
-        <Paragraph sectionTitle={false} text="Ihr Chor Oregano." />
+        <Paragraph sectionTitle={false} text="Ihr Chor Ohregano." />
       </SectionContainer>
 
       </ContentContainer>
