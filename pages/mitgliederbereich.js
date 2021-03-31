@@ -94,7 +94,7 @@ export default function Mitgliederbereich() {
             <SectionContainer>
             <Paragraph sectionTitle={false} title="Adressbuch" text="" />
             </SectionContainer>
-        
+            <p className={styles.member_counter}>{renderTable.length} Mitglieder in der Liste</p>
         <div className={styles.table}>
             <div className={styles.heading_row}>
                 <p className={styles.row_element} style={{width: "150px"}}>Nachname</p>
@@ -111,7 +111,7 @@ export default function Mitgliederbereich() {
                 </div>
             )}
         </div>
-        <p className={styles.member_counter}>{renderTable.length} Mitglieder in der Liste</p>
+        
         </div>
         :
         <div>

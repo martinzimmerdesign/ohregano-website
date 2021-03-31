@@ -64,7 +64,8 @@ export default function Startseite({ data }) {
           <Title title="Ohregano" caps={true} />
           <div className={styles.start_wrapper}>
             <div>
-              <Paragraph sectionTitle={false} title="Lüneburgs gemischter Chor." text="Unser Chor wurde 1990 in Lüneburg gegründet und bestand zunächst aus einem kleinen privaten, singbegeisterten Freundeskreis. Das sind wir immer noch, aber nicht nur das. Neben dem Singen haben wir eine schöne und aktive Chorgemeinschaft." />
+              <Paragraph sectionTitle={false} title="Lüneburgs gemischter Chor." text="Unser Chor wurde 1990 in Lüneburg gegründet und bestand zunächst aus einem kleinen privaten, singbegeisterten Freundeskreis." />
+              <Paragraph sectionTitle={false} title="" text="Natürlich singen wir nicht nur. So sind auch ein Sommerfest und eine gemeinsame Weihnachtsfeier feste Termine im Jahreskalender. Und natürlich geht es hin und wieder für ein Wochenende auf eine gemeinsame Chorfreizeit." />
               <Button title="kontakt" link="kontakt" />
             </div>
             <motion.div variants={variants.basic} className={styles.termin_container}>

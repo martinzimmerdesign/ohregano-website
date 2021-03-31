@@ -113,10 +113,10 @@ export default function Slider(props) {
             <div className="content_container">
               <motion.img whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.90 }} className={styles.detailClose} onClick={() => setToggled(false)} draggable="false" src="/icons/error.png" alt="Back Button Icon" />
               <div style={{display: "flex"}}>
-                <div>
+                <div className={styles.imgWrapper}>
                   <motion.img whileHover={{ scale: 1.05 }} className={styles.detailImg} draggable="false" src={rueckschau_data[wasClicked].img} alt="Arrow Icon" />
                 </div>
-                <div style={{display: "flex", flexDirection: "column"}}>
+                <div className={styles.textWrapper}>
                   <p className={styles.detailTitle}>{rueckschau_data[wasClicked].title}</p>
                   <div className={styles.line}></div>
                   <p className={styles.detailDate}>{rueckschau_data[wasClicked].date}</p>

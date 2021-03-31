@@ -115,7 +115,8 @@
     width: 100%;
     opacity: 1;
     overflow: hidden;
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter:saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
     color: white;
     display: flex;
     align-items: center;
@@ -124,20 +125,28 @@
 }
 
 .detailImg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: 80%;
     z-index: -200;
     opacity: 0.2;
+    position: absolute;
+    height: auto;
+    width: auto;
+    max-width: 90%;
+    max-height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .detailClose {
     height: 50px;
     width: 50px;
     float: right;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
 }
 
 .detailTitle {
@@ -182,16 +191,28 @@
         z-index: 200;
     }
 
+    .imgWrapper {
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+    }
+
     .detailImg {
-        height: 550px;
         margin-right: 60px;
         position: relative;
-        top: auto;
-        left: auto;
-        transform: translate(0, 0);
-        width: auto;
+        max-height: 660px;
         z-index: 200;
         opacity: 1;
+        top: unset;
+        left: unset;
+        transform: none;
+    }
+
+    .textWrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 50vw;
+        justify-content: flex-start;
     }
 
 }
@@ -211,15 +232,14 @@
     }
 
     .detailImg {
-        height: 660px;
-        margin-right: 60px;
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: translate(0, 0);
-        width: auto;
-        z-index: 200;
-        opacity: 1;
+        top: unset;
+        left: unset;
+        transform: none;
+        max-width: initial;
+    }
+
+    .detailClose {
+        margin-top: 40px;
     }
 
 }
@@ -237,8 +257,8 @@
     }
 
     .detailImg {
-        height: 800px;
         margin-right: 100px;
+        max-height: 780px;
     }
 
 }

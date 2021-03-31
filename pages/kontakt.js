@@ -28,7 +28,7 @@ export default function Kontakt() {
 
       <SectionContainer>
         <Title title="Kontakt" caps={false} />
-        <Paragraph sectionTitle={false} title="Interesse oder Fragen?" text="Haben Sie Interesse am Mitsingen oder allgemeine Fragen zum Chor? Dann nehmen Sie bitte gerne Kontakt zu uns auf!" />
+        <Paragraph sectionTitle={false} title="Interesse oder Fragen?" text="Der Chor freut sich jederzeit über neue Mitsängerinnen und Mitsänger. Kommen Sie doch einfach mal zum Reinschnuppern am Mittwochabend bei uns vorbei oder senden Sie uns eine Nachricht" />
         <Formular />
         <Paragraph sectionTitle={false} title="Hier proben wir." text="Sankt-Ursula-Weg 7, 21335 Lüneburg" />
         <motion.div variants={variants.basic} className={stylesFormular.line}></motion.div>

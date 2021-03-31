@@ -152,9 +152,10 @@ export default function Landing({ List, width }) {
 
         <motion.div className={styles.slider_container}>
           <Slide ref={slideRef} {...properties}>
+            <div className={styles.img6}></div>
             <div className={styles.img1}></div>
-            <div className={styles.img2}></div>
             <div className={styles.img3}></div>
+            <div className={styles.img4}></div>
           </Slide>
         </motion.div>
 

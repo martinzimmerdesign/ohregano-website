@@ -1,22 +1,28 @@
 .cover {
     pointer-events: none;
-    max-width: 300px;
+    max-width: auto;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+    width: auto;
+    height: 600px;
+    -webkit-box-shadow: 6px 0px 5px 0px rgba(0, 0, 0, 0.25);
+-moz-box-shadow:    6px 0px 5px 0px rgba(0, 0, 0, 0.25);
+box-shadow:         6px 0px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .slide_element {
     border: 2px solid rgba(0,0,0,0);
+    
 }
 
 /* Mobile */
 @media (min-width: 43em) {
 
     .cover {
-        max-width: 300px;
+        height: 600px;
     }
 
 }
@@ -30,7 +36,7 @@
 @media (min-width: 82em) {
 
     .cover {
-        max-width: 300px;
+        height: 600px;
     }
 
 }
@@ -39,7 +45,7 @@
 @media (min-width: 102em) {
 
     .cover {
-        max-width: 420px;
+        height: 700px;
     }
 
 }
